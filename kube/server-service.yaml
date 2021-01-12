@@ -10,12 +10,11 @@ metadata:
     io.kompose.service: server
   name: server
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - name: api
     port: 3000
     targetPort: 3000
-    nodePort: 30080
   selector:
     io.kompose.service: server
 status:
