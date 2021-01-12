@@ -7,6 +7,7 @@ let ObjectId = require("mongoose").Types.ObjectId;
 
 //GET http://localhost:3000/customers
 router.get("/", (req, resp) => {
+  console.log("jason get");
   Customer.find((err, docs) => {
     if (err)
       console.log(

@@ -32,8 +32,8 @@ spec:
             configMapKeyRef:
               key: DB_CONNECTION
               name: env
-        image: jasoncalalang/mean-backend
-        imagePullPolicy: ""
+        image: jasoncalalang/mean-backend:1.0
+        imagePullPolicy: Always
         name: server
         ports:
         - containerPort: 3000

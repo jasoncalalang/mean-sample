@@ -7,7 +7,7 @@ services:
 
   server:
     build: .
-    image: jasoncalalang/mean-backend
+    image: jasoncalalang/mean-backend:1.0
     ports:
       - '3000:3000'
     links:
@@ -17,7 +17,7 @@ services:
 
   client:
     build: client
-    image: jasoncalalang/mean-frontend
+    image: jasoncalalang/mean-frontend:1.0
     ports:
       - '80:80'
     env_file:
