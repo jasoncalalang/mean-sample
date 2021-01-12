@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  DB_CONNECTION: mongodb://mongo-db:27017
+  BACKEND_URI: http://localhost:30080/Customers
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: server-env
+  name: env

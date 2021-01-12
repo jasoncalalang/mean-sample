@@ -1,6 +1,7 @@
 import { Customer } from "./customer.model";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -8,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 export class CustomerService {
   customers: Customer[];
 
-  readonly APIUrl = "http://localhost:3000/Customers";
+  readonly APIUrl = environment.backendUri;
 
   constructor(private http: HttpClient) {}
 

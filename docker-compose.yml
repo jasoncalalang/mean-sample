@@ -7,16 +7,18 @@ services:
 
   server:
     build: .
-    image: sanjaysaini2000/meanstack_backend
+    image: jasoncalalang/mean-backend
     ports:
       - '3000:3000'
     links:
       - mongo-db
     env_file:
-      - .env_example
+      - .env
 
   client:
     build: client
-    image: sanjaysaini2000/meanstack_frontend
+    image: jasoncalalang/mean-frontend
     ports:
       - '80:80'
+    env_file:
+      - client/.env
