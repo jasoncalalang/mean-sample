@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jasoncalalang/mean-sample.svg?branch=master)](https://travis-ci.com/jasoncalalang/mean-sample)
+
 # Mean Stack - Customer Store App
 
 This Customer Store is a very basic Mean Stack application developed using MongoDB, Express, Angular and Node.js to show CRUD operations on MongoDB using RestAPI.
