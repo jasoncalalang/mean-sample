@@ -25,7 +25,7 @@ install: []
 
 before_script:
   - export TAG_VERSION=1.$TRAVIS_BUILD_NUMBER
-  - docker login -u "$HSIA_DOCKER_USERNAME" -p "$HSIA_DOCKER_PASSWORD"
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   
 
 script:
