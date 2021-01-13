@@ -1,0 +1,33 @@
+language: bash
+
+sudo: required
+
+env:
+  global:
+    - DB_CONNECTION="mongodb://mongo-db:27017"
+    - DOCKER_USERNAME=$TRAVIS_DOCKER_USERNAME
+    - DOCKER_PASSWORD=$TRAVIS_DOCKER_PASSWORD
+    - DOCKER_IMAGE=$TRAVIS_DOCKER_IMAGE
+
+services:
+  - docker
+
+# before_install:
+#   - wget http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O /tmp/helm.tar.gz
+#   - tar xzf /tmp/helm.tar.gz -C /tmp --strip-components=1 && mv /tmp/helm ~/bin/ 
+#   - curl -o /tmp/k8s.tar.gz  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz #--silent
+#   - tar xzf /tmp/k8s.tar.gz -C /tmp && mv /tmp/kubectl  /tmp/oc ~/bin/
+
+
+install: []
+  #- mkdir ${HOME}/.kube
+  #- echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
+
+before_script:
+  - export TAG_VERSION=1.$TRAVIS_BUILD_NUMBER
+  - docker login -u "$HSIA_DOCKER_USERNAME" -p "$HSIA_DOCKER_PASSWORD"
+  
+
+script:
+  - docker build -t "$DOCKER_IMAGE:$TAG_VERSION" .
+  - docker push "$DOCKER_IMAGE:$TAG_VERSION"
